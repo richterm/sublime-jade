@@ -4,7 +4,7 @@ import subprocess
 import os
 from os.path import *
 
-JADE_PLUGIN_FOLDER = dirname(realpath(__file__)) + "/"
+JADE_PLUGIN_FOLDER = dirname(realpath(__file__)) + os.sep
 
 
 class JadeCommand(sublime_plugin.TextCommand):
