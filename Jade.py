@@ -17,7 +17,7 @@ class JadeCommand(sublime_plugin.TextCommand):
             selection_text = self.view.substr(selection)
         fileBase = "tmp"
         tmpFile = fileBase + ".jade"
-        tmp_file = open(tmpFile, "w")
+        tmp_file = open(JADE_PLUGIN_FOLDER + tmpFile, "w")
         tmp_file.write(selection_text)
         tmp_file.close()
 
@@ -29,6 +29,6 @@ class JadeCommand(sublime_plugin.TextCommand):
         data = out_file.read()
         out_file.close()
         os.remove(outFile)
-        os.remove(tmpFile)
+        os.remove(JADE_PLUGIN_FOLDER + tmpFile)
 
         self.view.replace(edit, selection, data)
